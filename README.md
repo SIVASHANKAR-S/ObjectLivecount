@@ -1,5 +1,6 @@
 # ObjectLivecount
 Object count with yolov4 and tensorflow mmodel
+<p align="center"><img src="detections/detection1.png" width="640"\></p>
 
 ## Getting Started
 ### Conda (Recommended)
@@ -43,9 +44,6 @@ USE MY LICENSE PLATE TRAINED CUSTOM WEIGHTS: https://drive.google.com/file/d/1EU
 
 Copy and paste your custom .weights file into the 'data' folder and copy and paste your custom .names into the 'data/classes/' folder.
 
-The only change within the code you need to make in order for your custom model to work is on line 14 of 'core/config.py' file.
-Update the code to point at your custom .names file as seen below. (my custom .names file is called custom.names but yours might be named differently)
-<p align="center"><img src="data/helpers/custom_config.png" width="640"\></p>
 
 <strong>Note:</strong> If you are using the pre-trained yolov4 then make sure that line 14 remains <strong>coco.names</strong>.
 
@@ -69,14 +67,6 @@ If you want to run yolov3 or yolov3-tiny change ``--model yolov3`` and .weights 
 
 <strong>Note:</strong> You can also run the detector on multiple images at once by changing the --images flag like such ``--images "./data/images/kite.jpg, ./data/images/dog.jpg"``
 
-### Result Image(s) (Regular TensorFlow)
-You can find the outputted image(s) showing the detections saved within the 'detections' folder.
-#### Pre-trained YOLOv4 Model Example
-<p align="center"><img src="data/helpers/result.png" width="640"\></p>
-
-### Result Video
-Video saves wherever you point --output flag to. If you don't set the flag then your video will not be saved with detections on it.
-<p align="center"><img src="data/helpers/demo.gif"\></p>
 
 ## YOLOv4-Tiny using TensorFlow
 The following commands will allow you to run yolov4-tiny model.
@@ -98,8 +88,7 @@ python save_model.py --weights ./data/custom.weights --output ./checkpoints/cust
 python detect.py --weights ./checkpoints/custom-416 --size 416 --model yolov4 --images ./data/images/car.jpg
 ```
 
-#### Custom YOLOv4 Model Example (see video link above to train this model)
-<p align="center"><img src="data/helpers/custom_result.png" width="640"\></p>
+
 
 ## Custom Functions and Flags
 Here is how to use all the currently supported custom functions and flags that I have created.
@@ -114,8 +103,6 @@ To count total objects all that is needed is to add the custom flag "--count" to
 # Run yolov4 model while counting total objects detected
 python detect.py --weights ./checkpoints/yolov4-416 --size 416 --model yolov4 --images ./data/images/dog.jpg --count
 ```
-Running the above command will count the total number of objects detected and output it to your command prompt or shell as well as on the saved detection as so:
-<p align="center"><img src="data/helpers/total_count.png" width="640"\></p>
 
 #### Count Objects Per Class
 To count the number of objects for each individual class of your object detector you need to add the custom flag "--count" as well as change one line in the detect.py or detect_video.py script. By default the count_objects function has a parameter called <strong>by_class</strong> that is set to False. If you change this parameter to <strong>True</strong> it will count per class instead.
