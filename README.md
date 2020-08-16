@@ -1,4 +1,5 @@
-# ObjectLivecount
+# Object Live count
+application developed in this project helps to not only detect objects with respective classes but also number of occurances in that detection frame.
 Object count with yolov4 and tensorflow mmodel
 <p align="center"><img src="detections/detection1.png" width="640"\></p>
 
