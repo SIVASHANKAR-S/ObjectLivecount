@@ -63,9 +63,6 @@ python detect_video.py --weights ./checkpoints/yolov4-416 --size 416 --model yol
 # Run yolov4 on webcam
 python detect_video.py --weights ./checkpoints/yolov4-416 --size 416 --model yolov4 --video 0 --output ./detections/results.avi
 ```
-If you want to run yolov3 or yolov3-tiny change ``--model yolov3`` and .weights file in above commands.
-
-<strong>Note:</strong> You can also run the detector on multiple images at once by changing the --images flag like such ``--images "./data/images/kite.jpg, ./data/images/dog.jpg"``
 
 
 ## YOLOv4-Tiny using TensorFlow
@@ -107,18 +104,13 @@ python detect.py --weights ./checkpoints/yolov4-416 --size 416 --model yolov4 --
 #### Count Objects Per Class
 To count the number of objects for each individual class of your object detector you need to add the custom flag "--count" as well as change one line in the detect.py or detect_video.py script. By default the count_objects function has a parameter called <strong>by_class</strong> that is set to False. If you change this parameter to <strong>True</strong> it will count per class instead.
 
-To count per class make detect.py or detect_video.py look like this:
-<p align="center"><img src="data/helpers/by_class_config.PNG" width="640"\></p>
+
 
 Then run the same command as above:
 ```
 # Run yolov4 model while counting objects per class
 python detect.py --weights ./checkpoints/yolov4-416 --size 416 --model yolov4 --images ./data/images/dog.jpg --count
 ```
-Running the above command will count the number of objects detected per class and output it to your command prompt or shell as well as on the saved detection as so:
-<p align="center"><img src="data/helpers/perclass_count.png" width="640"\></p>
-
-<strong>Note:</strong> You can add the --count flag to detect_video.py commands as well!
 
 <a name="info"/>
 
