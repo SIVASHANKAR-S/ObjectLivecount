@@ -232,7 +232,7 @@ detect_video.py:
 ```
 
 ### References  
-Thanks for great tutorial sir..
+Thanks for great tutorial sir.I learned a lot form you.
    Huge shoutout goes to hunglc007 for creating the backbone of this repository:
   * [tensorflow-yolov4-tflite](https://github.com/hunglc007/tensorflow-yolov4-tflite)
   
